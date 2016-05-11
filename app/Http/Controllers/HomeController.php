@@ -29,6 +29,8 @@ class HomeController extends Controller {
 				'insert_data'=>sizeof($data['id'])
 			)
 		);
+
+		echo "<br><a href=master/currency>Back</a>";
 	}
 
 	public function get_Lang()
@@ -54,6 +56,8 @@ class HomeController extends Controller {
 				'inserted_data'	=> sizeof($data['id'])
 			)
 		);
+
+		echo "<br><a href=master/language>Back</a>";
 	}
 
 	public function get_Country()
@@ -76,9 +80,11 @@ class HomeController extends Controller {
 		echo json_encode(
 			array(
 				'status_code'	=> 200,
-				'inserted_data'	=> sizeof($data['id'])
+				'inserted_data'	=> sizeof($data['id']),
 			)
 		);
+
+		echo "<br><a href=master/country>Back</a>";
 	}
 
 	public function get_Airport()
@@ -106,6 +112,8 @@ class HomeController extends Controller {
 				'inserted_data'	=> sizeof($data['id'])
 			)
 		);
+
+		echo "<br><a href=master/airport>Back</a>";
 	}
 
 	public function view_Currency()

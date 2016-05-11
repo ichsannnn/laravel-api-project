@@ -20,6 +20,7 @@ Route::controllers([
   'password'  => 'Auth\PasswordController'
 ]);
 
+Route::group(['middleware' => 'auth'], function() {
   Route::get('master/currency', 'HomeController@view_Currency');
   Route::get('cronGetCurrency', 'HomeController@get_Currency');
   Route::get('master/language', 'HomeController@view_Lang');
@@ -28,3 +29,6 @@ Route::controllers([
   Route::get('cronGetCountry', 'HomeController@get_Country');
   Route::get('master/airport', 'HomeController@view_Airport');
   Route::get('cronGetAirport', 'HomeController@get_Airport');
+  Route::get('airline/flight', ['as' => 'airline_flight', 'uses' => 'Reservasi@flight']);
+  Route::post('airline/flight/search', ['as' => 'ajax_search_flight', 'uses' => 'Reservasi@searchFlight']);
+});
